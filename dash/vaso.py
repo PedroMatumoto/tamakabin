@@ -1,51 +1,89 @@
-import pygame as py
+import sys
 
-sensorUmidade=3
-sensorLdr=3
-sensorTemperatura=3
-def draw_rect(x,y,sizex,sizey,color):
-    py.draw.rect(screen,color,(x,y,sizex,sizey))
-def draw_line(x,y,x2,y2,color):
-    while x!=x2 and y!=y2:
-        draw_rect(x,y,12.5,12.5,color)
-        x+=12.5
-        y-=12.5
+import pygame
+from PIL import Image
 
-def draw_face(how):
-    draw_rect(400,300,200,50,(150,75,0))
-    draw_rect(425,350,150,50,(150,75,0))
-    draw_rect(450,400,100,50,(150,75,0))
-
-    draw_line(525,300,600,225,(0,255,0))
-    draw_rect(587.5,225,12.5,12.5,(0,255,0)) 
-    
-
-    if how=="nice":
-        draw_rect(440,350,12.5,12.5,(255,255,255))
-        draw_rect(452,338,25,12.5,(255,255,255))
-        draw_rect(477,350,12.5,12.5,(255,255,255))
-
-        draw_rect(515,350,12.5,12.5,(255,255,255))
-        draw_rect(527,338,25,12.5,(255,255,255))
-        draw_rect(552,350,12.5,12.5,(255,255,255))
-
-        draw_rect(477,375,12.5,25,(255,255,255))
-        draw_rect(487,400,25,12.5,(255,255,255))
-        draw_rect(512,375,12.5,25,(255,255,255))
+size=(800,600)
+FORMAT = "RGBA"
 
 
-py.init()
-screen = py.display.set_mode((1280, 720))
-game_over=False
+def pil_to_game(img):
+    data = img.tobytes("raw", FORMAT)
+    return pygame.image.fromstring(data, img.size, FORMAT)
+
+def get_gif_frame(img, frame):
+    img.seek(frame)
+    return  img.convert(FORMAT)
 
 
-while not game_over:
-    for event in py.event.get():
-        if event.type == py.QUIT:
-            game_over=True
-    screen.fill((0,0,0))
-    draw_face("nice")
+def init():
+    return pygame.display.set_mode(size)
 
-    py.display.update()
-py.quit()
+def exit():
+    pygame.quit()
 
+
+# Função para desenhar a barra de vida com cores personalizadas
+def draw_health_bar(screen, x, y, current_life, max_life, bar_color, border_color):
+    # Configurações da barra de vida
+    bar_width = 200
+    bar_height = 20
+    fill = (current_life / max_life) * bar_width
+
+    # Desenha a borda da barra com a cor especificada
+    pygame.draw.rect(screen, border_color, (x, y, bar_width, bar_height),border_radius=5)
+
+    # Desenha a vida restante com a cor especificada
+    pygame.draw.rect(screen, bar_color, (x, y, fill, bar_height),border_radius=5)
+
+
+max_life = 100
+current_life = 100
+
+# Carrega a imagem do ícone (substitua 'icon.png' pelo caminho do seu arquivo de ícone)
+umidityicon = pygame.image.load('umidity-icon.png')
+umidityicon = pygame.transform.scale(umidityicon, (40, 40))  # Ajuste o tamanho conforme necessário
+
+temperatureicon = pygame.image.load('temperature-icon.png')
+temperatureicon = pygame.transform.scale(temperatureicon, (40, 40))
+
+lighticon = pygame.image.load('light-icon.png')
+lighticon = pygame.transform.scale(lighticon, (40, 40))
+
+def main(screen, path_to_image):
+    gif_img = Image.open(path_to_image)
+    if not getattr(gif_img, "is_animated", False):
+        print(f"Imagem em {path_to_image} não é um gif animado")
+        return
+    current_frame = 0
+    clock = pygame.time.Clock()
+    # colocar cor de fundo
+    screen.fill((82, 82, 82))
+    while True:
+        frame = pil_to_game(get_gif_frame(gif_img, current_frame))
+        screen.blit(frame, (120, 0))
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                return
+            
+        umidity_bar_color = (0, 0, 255)
+        temperature_bar_color = (255, 0, 0)
+        light_bar_color = (255, 255, 0)
+        border_color = (255, 255, 255)
+
+        current_frame = (current_frame + 1) % gif_img.n_frames
+         # Desenha a barra de vida na posição (x=20, y=20)
+         # adiciona ícones de umidade, temperatura e luz
+        screen.blit(umidityicon, (40, 240))
+        draw_health_bar(screen, 90, 250, current_life, max_life, umidity_bar_color, border_color)
+        screen.blit(temperatureicon, (40, 300))
+        draw_health_bar(screen, 90, 310, current_life, max_life, temperature_bar_color, border_color)
+        screen.blit(lighticon, (40, 360))
+        draw_health_bar(screen, 90, 370, current_life, max_life, light_bar_color, border_color)
+
+        pygame.display.flip()
+        clock.tick(10)
+
+
+
+main(init(),'idle-bounce.gif' )
