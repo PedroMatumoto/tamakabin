@@ -2,9 +2,10 @@ import sys
 
 import pygame
 from PIL import Image
-import Adafruit_DHT
+# import Adafruit_DHT
 import time
-import RPi.GPIO as GPIO
+# import RPi.GPIO as GPIO
+import fastapi
 
 size=(800,600)
 FORMAT = "RGBA"
@@ -43,10 +44,10 @@ def draw_health_bar(screen, x, y, current_life, max_life, bar_color, border_colo
 max_life = 100
 current_life = 100
 # Define o tipo de sensor
-sensor = Adafruit_DHT.DHT11
+# sensor = Adafruit_DHT.DHT11
 #sensor = Adafruit_DHT.DHT22
  
-GPIO.setmode(GPIO.BOARD)
+# GPIO.setmode(GPIO.BOARD)
 
 pino_sensor = 25
 pino_luz = 26
@@ -78,15 +79,15 @@ def main(screen, path_to_image):
                 return
             
         # Efetua a leitura do sensor
-        umid, temp = Adafruit_DHT.read_retry(sensor, pino_sensor);
+        # umid, temp = Adafruit_DHT.read_retry(sensor, pino_sensor);
         resistencia_luz = 0
         # Lê o valor da porta analógica
-        resistencia_luz = GPIO.input(pino_luz)
-        # Caso leitura esteja ok, mostra os valores na tela
-        if umid is not None and temp is not None:
-            print ("Temperatura = {0:0.1f}  Umidade = {1:0.1f}n").format(temp, umid);
-            print('Valor da luz:', resistencia_luz)
-            time.sleep(5);
+        # resistencia_luz = GPIO.input(pino_luz)
+        # # Caso leitura esteja ok, mostra os valores na tela
+        # if umid is not None and temp is not None:
+        #     print ("Temperatura = {0:0.1f}  Umidade = {1:0.1f}n").format(temp, umid);
+        #     print('Valor da luz:', resistencia_luz)
+        #     time.sleep(5);
         
             
         umidity_bar_color = (0, 0, 255)
