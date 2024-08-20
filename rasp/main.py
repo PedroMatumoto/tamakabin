@@ -7,7 +7,7 @@ import requests
 
 # Define o tipo de sensor
 pino_bomba = 26
-endpoint = 'http://localhost:8000/temperature'
+endpoint = "http://192.168.234.185:8000/"
 dht_device = adafruit_dht.DHT22(board.D4)
 
 while True:
@@ -15,12 +15,16 @@ while True:
         temp = dht_device.temperature
         umid = dht_device.humidity
         if umid is not None and temp is not None:
-            print (temp, umid)
+            # postar as informações no endpoint
+            try:
+                print(temp, umid)
+                requests.post(endpoint, json={"temperature": temp, "humidity": umid})
+            except:
+                print("Erro ao postar dados")
             time.sleep(5)
         elif umid is None or temp is None:
-            print('Erro ao ler sensor')
+            print("Erro ao ler sensor")
             time.sleep(5)
     except:
-        print('Erro ao ler sensor')
+        print("Erro ao ler sensor")
     GPIO.cleanup()
-
