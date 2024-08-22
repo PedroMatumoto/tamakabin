@@ -7,7 +7,6 @@ from pymongo.mongo_client import MongoClient
 from pydantic import BaseModel
 from motor.motor_asyncio import AsyncIOMotorClient
 
-#uri = "mongodb+srv://pedromatumoto:illenium21@plantacluster.orx9p.mongodb.net/?retryWrites=true&w=majority&appName=PlantaCluster"
 
 # Define o tipo de sensor
 pino_bomba = 26
