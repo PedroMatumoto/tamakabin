@@ -36,9 +36,8 @@ O projeto consiste em uma Raspberry Pi conectada à um vaso de planta que envia 
 
 ## Diagrama de blocos
 
-<p align="center">
-  <img width="910" alt="diagrama de blocos" src="assets/diagrama_blocos.png">
-</p>
+![diagrama_blocos_tamakabin drawio](https://github.com/user-attachments/assets/0b7b289f-1450-4077-9225-5b2d5da3ec60)
+
 
 ## Tecnologias e conceitos
 
@@ -75,7 +74,7 @@ O circuito utiliza diversos conceitos eletrícos e eletrônicos desenvolvidos du
 </p>
 
 <p align="center">
-  <img width="910" alt="kirby" src="assets\banner_kirby.jpg">
+  <img width="910" alt="kirby" src="https://github.com/user-attachments/assets/808cb715-9244-4dbf-bf49-f9812f788d3e">
 </p>
 
 ## Modelamento financeiro
