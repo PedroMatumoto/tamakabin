@@ -3,6 +3,10 @@
 **Tamakabin** é o projeto do 2° semestre da disciplina **Microcontroladores e Sistemas Embarcados** (EEN251) do **Instituto Mauá de Tecnologia** (IMT), ministrada pelos professores [Sergio Ribeiro Augusto](https://www.linkedin.com/in/sergio-ribeiro-augusto-258a9ba0/?originalSubdomain=br) e [Rodrigo França](https://www.linkedin.com/in/rodrigo-fran%C3%A7a-847872b1/).<BR>
 Este repositório é responsável pela parte de IoT da aplicação. O front-end está [neste repositório](https://github.com/enzosakamoto/tamakabin-front).
 
+<p align="center">
+  <img width="910" alt="planta" src="https://github.com/user-attachments/assets/808cb715-9244-4dbf-bf49-f9812f788d3e">
+</p>
+
 ## Sumário
 
 - [Requisitos](#requisitos)
@@ -70,12 +74,9 @@ O circuito utiliza diversos conceitos eletrícos e eletrônicos desenvolvidos du
 - Regulação de tensão
 
 <p align="center">
-  <img width="910" alt="diagrama eletronico" src="assets\Schematic_kyubo_shared_micro_2024-05-23.png">
+  <img width="910" alt="diagrama eletronico" src="https://github.com/user-attachments/assets/c184c8cd-6486-4bfc-800b-a318ea7c7181">
 </p>
 
-<p align="center">
-  <img width="910" alt="kirby" src="https://github.com/user-attachments/assets/808cb715-9244-4dbf-bf49-f9812f788d3e">
-</p>
 
 ## Modelamento financeiro
 
@@ -122,8 +123,10 @@ O `cmd` e as seguintes bibliotecas foram utilizadas para depurar o código:
 ## Dia 19/08/2024
 
 - **Teste de funcionamento do sensor DHT22**
-  - ![teste_dht_22](https://github.com/user-attachments/assets/7335f450-3d8d-40ff-b1c1-6864b62ef15f)
 
+<p align="center">
+  <img height="600" alt="kirby" src="https://github.com/user-attachments/assets/7335f450-3d8d-40ff-b1c1-6864b62ef15f">
+</p>
 
 ## Foto da equipe
 
