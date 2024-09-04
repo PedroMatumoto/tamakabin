@@ -134,6 +134,9 @@ O `cmd` e as seguintes bibliotecas foram utilizadas para depurar o código:
 
 https://github.com/user-attachments/assets/4b965cbf-abdd-4a26-8b6d-a66f4481a4f5
 
+## Dia 04/09/2024 - Apresentação final
+
+[![Thumbnail do vídeo](https://img.youtube.com/vi/6dndOLTqGWo/0.jpg)](https://youtu.be/6dndOLTqGWo)
 
 ## Foto da equipe
 
