@@ -60,10 +60,11 @@ icone_nuvem = icone_nuvem.resize(device.size)
 try:
     while True:
         try:
-            temp, umid = dht.read_retry(sensor,DHT)
+            umid, temp = dht.read_retry(sensor,DHT)
             bright = GPIO.input(PIN)
             if umid is not None and temp is not None:
-                # postar as informações no endpoint
+                print('info not null')
+		# postar as informações no endpoint
                 # try:
                 #    result = collection.insert_one({"temperature": temp, "umidity": umid})
                 #    print(result.acknowledged)
@@ -71,7 +72,8 @@ try:
                 #    print(e)
                 try:
                     print(temp, umid, bright)
-                    #
+                    temp = round(temp,2)
+                    umid = round(umid,2)
                     response = requests.post(
                         endpoint,
                         json={
@@ -80,7 +82,7 @@ try:
                             "brightness": bright,
                         },
                     )
-                    print(response.text)
+                    
                 except Exception as e:
                     print(e)
                     print("Erro ao postar dados")
