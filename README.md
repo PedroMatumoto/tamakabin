@@ -74,7 +74,7 @@ O circuito utiliza diversos conceitos eletrícos e eletrônicos desenvolvidos du
 - Regulação de tensão
 
 <p align="center">
-  <img width="910" alt="diagrama eletronico" src="https://github.com/user-attachments/assets/c184c8cd-6486-4bfc-800b-a318ea7c7181">
+  <img width="910" alt="diagrama eletronico" src="https://github.com/user-attachments/assets/72ba51d3-3a49-4561-89fa-2963866ee962">
 </p>
 
 
