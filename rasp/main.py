@@ -13,7 +13,7 @@ from PIL import Image
 from PIL import ImageDraw
 
 # Define o tipo de sensor
-pino_bomba = 26
+pino_bomba = 20
 endpoint = "http://tamakabin.vercel.app/api/data"
 # client = MongoClient(uri)
 # database = client["tomferrite"]
@@ -82,6 +82,7 @@ try:
                             "brightness": bright,
                         },
                     )
+                    print(response)
                     
                 except Exception as e:
                     print(e)
@@ -108,7 +109,7 @@ try:
                         draw.text((0, 0), f"Muito Calor!\nMe coloque tire do sol!", fill=255)
 
                 elif (
-                    bright == 1
+                    bright == 0
                     and time.localtime().tm_hour > 6
                     and time.localtime().tm_hour < 18
                 ):
@@ -117,7 +118,7 @@ try:
                         draw.text((0, 0), f"Sol! Ainda bem!", fill=255)
 
                 elif (
-                    bright == 0
+                    bright == 1
                     or time.localtime().tm_hour < 6
                     or time.localtime().tm_hour > 18
                 ):
