@@ -125,8 +125,15 @@ O `cmd` e as seguintes bibliotecas foram utilizadas para depurar o código:
 - **Teste de funcionamento do sensor DHT22**
 
 <p align="center">
-  <img height="600" alt="kirby" src="https://github.com/user-attachments/assets/7335f450-3d8d-40ff-b1c1-6864b62ef15f">
+  <img height="600" alt="testedht" src="https://github.com/user-attachments/assets/7335f450-3d8d-40ff-b1c1-6864b62ef15f">
 </p>
+
+## Dia 29/08/2024
+
+- **Teste de funcionamento do Display e bomba**
+
+https://github.com/user-attachments/assets/4b965cbf-abdd-4a26-8b6d-a66f4481a4f5
+
 
 ## Foto da equipe
 
