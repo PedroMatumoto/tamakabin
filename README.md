@@ -135,13 +135,14 @@ O `cmd` e as seguintes bibliotecas foram utilizadas para depurar o código:
 https://github.com/user-attachments/assets/4b965cbf-abdd-4a26-8b6d-a66f4481a4f5
 
 ## Dia 04/09/2024 - Apresentação final
-
-[![Thumbnail do vídeo](https://img.youtube.com/vi/6dndOLTqGWo/0.jpg)](https://youtu.be/6dndOLTqGWo)
+<p align="center">
+   <img height="600" alt="testedht" src="https://img.youtube.com/vi/6dndOLTqGWo/0.jpg" href="https://youtu.be/6dndOLTqGWo">
+</p>
 
 ## Foto da equipe
 
 <p align="center">
-  <img width="910" alt="kirby" src="assets\FOTO_EQUIPE.jpg">
+  <img width="800" alt="kirby" src="https://github.com/user-attachments/assets/b4e1d8fe-257f-430c-bb13-04429a5ec331">
 </p>
 
 # Autores
