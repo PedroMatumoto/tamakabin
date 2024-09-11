@@ -115,8 +115,6 @@ O `cmd` e as seguintes bibliotecas foram utilizadas para depurar o código:
 - Adafruit_Python
 - requests
 - pymongo
-  
-## Diagrama de funcionamento
 
 # Testes
 
